@@ -1,0 +1,684 @@
+:root {
+    --sky-color: linear-gradient(rgba(100, 149, 237, 1), rgba(100, 149, 237, 0.8),  white);
+    --street-color: rgb(200, 193, 174);
+    --window-color: rgb(255, 231, 263);
+    --border-shadow: rgba(0, 0, 0, 0.3);
+    --tree-crown-color: rgb(14, 112, 14);
+    --tree-trunk-color: rgb(119, 25, 25);
+    --darker-tree-crown-color: rgb(2, 88, 2);
+    --darker-tree-trunk-color: rgb(95, 3, 3);
+    --darker-tree-crown-color-2: rgb(22, 70, 0);
+    --darker-tree-trunk-color-2: rgb(119, 25, 25);
+}
+
+/* Utility Classes */
+.bg-color-gray { background-color: rgb(200, 193, 174); }
+.bg-color-blueish { background-color: rgb(120, 185, 180);}
+.bg-color-orange {  background-color: rgb(238, 67, 40);}
+.bg-color-black {   background-color: #333;    }
+.bg-color-shadow-1 {  background-color: rgba(52, 94, 93, 1);}
+
+.orange-building-padding { padding: 10px;   }
+.orange-building-padding-medium { padding: 5px;   }
+.orange-building-padding-small { padding: 5px;}
+
+.arrange-windows-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.arrange-windows-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.arrange-windows-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    height: 100vh;
+}
+
+.container {
+    height: 700px;
+    width: 800px;
+    background-color: white;
+    border-radius: 3%;
+    box-shadow: 
+    /* X Value, Y Value, Spread, Blur, color */
+        -10px -10px 10px rgba(0, 0, 0, 0.2),
+        10px 10px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px var(--border-shadow) solid;
+}
+
+.circle-outline {
+    margin-top: 50px;
+    height: 700px;
+    width: 700px;
+    /* top-left,    top-right,  bottom-right,    bottom left */
+    border-radius: 50% 50% 50% 50%;
+    background: var(--sky-color);
+    /* overflow: hidden; */
+    position: relative;
+    border: 2px var(--border-shadow) solid;
+}
+
+/* Street */
+.rectangle {
+    margin-left: 76px;
+    height: 80px;
+    width: 550px;
+    background-color: var(--street-color);
+    position: absolute;
+    top: 550px;
+    z-index: 30;
+    border: 5px;
+    border: 2px var(--border-shadow) solid;
+    box-shadow: 
+         0px 50px 0 0 white;
+}
+
+
+
+.top {
+    position: absolute;
+    top: -100px;
+    left: 5px;
+    width: 60px;
+    height: 100px;
+    box-shadow: inset 20px 0 10px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+.bottom { 
+    width: 70px;
+    height: 200px;
+    box-shadow: inset 40px 0 10px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+.top-medium {
+    position: absolute;
+    top: -70px;
+    left: 5px;
+    width: 40px;
+    height: 70px;
+    box-shadow: inset 20px 0 20px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+.bottom-medium { 
+    width: 50px;
+    height: 120px;
+    box-shadow: inset 20px 0 20px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+.top-small {
+    position: absolute;
+    top: -50px;
+    left: 5px;
+    width: 30px;
+    height: 50px;
+    box-shadow: inset 10px 0 5px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+.bottom-small { 
+    width: 40px;
+    height: 100px;
+    box-shadow: inset 10px 0 5px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+
+.tassel {
+    position: absolute;
+    top: -32px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    box-shadow: inset 10px 0 10px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+.tassel-small {
+    position: absolute;
+    top: -42px;
+    left: 12px;
+    width: 16px;
+    height: 40px;
+    box-shadow: inset 5px 0 5px 0 rgba(0, 0, 0, 0.3);
+    border: 2px var(--border-shadow) solid;
+}
+
+/* BIG SHADOW */
+.top-shadow-1 {
+    position: absolute;
+    top: -100px;
+    left: 5px;
+    width: 50px;
+    height: 100px;
+}
+
+.bottom-shadow-1 { 
+    width: 60px;
+    height: 200px;
+}
+
+/* MEDIUM SHADOW */
+.top-shadow-2 {
+    position: absolute;
+    top: -50px;
+    left: 5px;
+    width: 30px;
+    height: 50px;
+}
+
+.bottom-shadow-2 { 
+    width: 40px;
+    height: 100px;
+}
+
+/* BIG WINDOW */
+.window {
+    width: 7px;
+    height: 13px;
+    background-color: var(--window-color);
+    margin: auto;
+    border: 2px var(--border-shadow) solid;
+}
+
+.window-medium {
+    width: 5px;
+    height: 9px;
+    background-color: var(--window-color);
+    margin: auto;
+    border: 2px var(--border-shadow) solid;
+}
+
+.window-small {
+    width: 4px;
+    height: 7px;
+    background-color: var(--window-color);
+    margin: auto;
+    border: 2px var(--border-shadow) solid;
+}
+
+
+
+
+/* Arrange the building through the city */
+/* 1st Building */
+.building:nth-child(2) {
+    position: absolute;
+    left:100px;
+    bottom: 100px;
+    z-index: 20;
+    /* display: none; */
+}
+
+/* 2st Building */
+.building:nth-child(3) {
+    position: absolute;
+    left: 145px;
+    bottom: 135px;
+    z-index: 20;
+    /* display: none; */
+}
+
+/* 3st Building */
+.building:nth-child(4) {
+    position: absolute;
+    left: 220px;
+    bottom: 145px;
+    z-index: 10;
+    /* display: none; */
+}
+
+/* 4st Building */
+.building:nth-child(5) {
+    position: absolute;
+    left: 275px;
+    bottom: 145px;
+    z-index: 15;
+    /* display: none; */
+}
+
+/* 5st Building */
+.building:nth-child(6) {
+    position: absolute;
+    left: 331px;
+    bottom: 105px;
+    z-index: 10;
+    opacity: 0.9;
+    /* display: none; */
+}
+
+/* 6st Building */
+.building:nth-child(7) {
+    position: absolute;
+    left: 405px;
+    bottom: 145px;
+    z-index: 15;
+    /* display: none; */
+}
+
+/* 7st Building */
+.building:nth-child(8) {
+    position: absolute;
+    left: 460px;
+    bottom: 105px;
+    z-index: 10;
+    opacity: 0.9;
+    /* display: none; */
+}
+
+/* 8st Building */
+.building:nth-child(9) {
+    position: absolute;
+    left: 500px;
+    bottom: 135px;
+    z-index: 15;
+    opacity: 1;
+    /* display: none; */
+}
+
+/* 9st Building */
+.building:nth-child(10) {
+    position: absolute;
+    left: 570px;
+    bottom: 105px;
+    z-index: 15;
+    opacity: 1;
+    /* display: none; */
+}
+
+
+
+
+
+/*          Arrange Shadows */
+/* 1st Shadow */
+.shadow-1:nth-child(11) {
+    position: absolute;
+    left: 85px;
+    bottom: 80px;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+/* 2nd Shadow */
+.shadow-1:nth-child(12) {
+    position: absolute;
+    left: 120px;
+    bottom: 100px;
+    z-index: 5;
+    opacity: 0.6;
+}
+
+/* 3st Shadow */
+.shadow-1:nth-child(13) {
+    position: absolute;
+    left: 190px;
+    bottom: 80px;
+    z-index: 5;
+    opacity: 0.9;
+}
+
+/* 4st Shadow */
+.shadow-1:nth-child(14) {
+    position: absolute;
+    left: 250px;
+    bottom: 120px;
+    z-index: 5;
+    opacity: 1;
+}
+
+/* 5st Shadow */
+.shadow-1:nth-child(15) {
+    position: absolute;
+    left: 300px;
+    bottom: 100px;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+/* 6st Shadow */
+.shadow-1:nth-child(16) {
+    position: absolute;
+    left: 400px;
+    bottom: 90px;
+    z-index: 5;
+    opacity: 1;
+}
+
+/* 7th Shadow */
+.shadow-1:nth-child(17) {
+    position: absolute;
+    left: 390px;
+    bottom: 70px;
+    z-index: 4;
+    opacity: 0.6;
+}
+
+/* 8th Shadow */
+.shadow-1:nth-child(18) {
+    position: absolute;
+    left: 420px;
+    bottom: 50px;
+    z-index: 4;
+    opacity: 0.6;
+}
+
+/* 9th Shadow */
+.shadow-1:nth-child(19) {
+    position: absolute;
+    left: 450px;
+    bottom: 120px;
+    z-index: 4;
+    opacity: 0.6;
+}
+
+/* 10th Shadow */
+.shadow-1:nth-child(20) {
+    position: absolute;
+    left: 550px;
+    bottom: 100px;
+    z-index: 4;
+    opacity: 0.4;
+}
+
+/* 11th Shadow */
+.shadow-1:nth-child(21) {
+    position: absolute;
+    left: 555px;
+    bottom: 145px;
+    z-index: 4;
+    opacity: 0.8;
+}
+
+/* 12th Shadow */
+.shadow-1:nth-child(22) {
+    position: absolute;
+    left: 580px;
+    bottom: 95px;
+    z-index: 5;
+    opacity: 0.9;
+}
+
+
+/* #######################         Tree forest */
+.tree-crown {
+    width: 30px;
+    height: 30px;
+    background: var(--tree-crown-color);
+    border-radius: 50%;
+    box-shadow: 
+        5px -15px var(--tree-crown-color),
+        15px -25px var(--tree-crown-color),
+        25px -15px var(--tree-crown-color),
+        30px -5px var(--tree-crown-color),
+        25px 3px var(--tree-crown-color),
+        10px 3px var(--tree-crown-color) ;
+    margin: 0;
+    z-index: -20;
+}
+
+.tree-trunk {
+    height: 30px;
+    width: 7px;
+    background: var(--tree-trunk-color);
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    margin: 0;
+}
+
+.darker-tree-crown {
+    width: 30px;
+    height: 30px;
+    background: var(--darker-tree-crown-color);
+    border-radius: 50%;
+    box-shadow: 
+        5px -15px var(--darker-tree-crown-color),
+        15px -25px var(--darker-tree-crown-color),
+        25px -15px var(--darker-tree-crown-color),
+        30px -5px var(--darker-tree-crown-color),
+        25px 3px var(--darker-tree-crown-color),
+        10px 3px var(--darker-tree-crown-color) ;
+    margin: 0;
+    z-index: 20;
+}
+
+.darker-tree-trunk {
+    height: 30px;
+    width: 7px;
+    background: var(--darker-tree-trunk-color);
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    margin: 0;
+}
+
+.darker-tree-crown-2 {
+    width: 30px;
+    height: 30px;
+    background: var(--darker-tree-crown-color-2);
+    border-radius: 50%;
+    box-shadow: 
+        5px -15px var(--darker-tree-crown-color-2),
+        15px -25px var(--darker-tree-crown-color-2),
+        25px -15px var(--darker-tree-crown-color-2),
+        30px -5px var(--darker-tree-crown-color-2),
+        25px 3px var(--darker-tree-crown-color-2),
+        10px 3px var(--darker-tree-crown-color-2) ;
+    margin: 0;
+    z-index: 30;
+}
+
+.darker-tree-trunk-2 {
+    height: 25px;
+    width: 7px;
+    background: var(--darker-tree-trunk-color-2);
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    margin: 0;
+}
+
+
+/* Forest position */
+.tree:nth-child(1){
+    position: absolute;
+    top: 200px;
+    left: 0;
+    display: none;
+    /* doesn't work */
+}
+
+.tree:nth-child(2) {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+}
+
+.tree:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 120px;
+}
+
+.tree:nth-child(4) {
+    position: absolute;
+    top: 20px;
+    left: 180px;
+}
+
+.tree:nth-child(5) {
+    position: absolute;
+    top: 0;
+    left: 240px;
+}
+
+.tree:nth-child(6) {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+}
+
+.tree:nth-child(7) {
+    position: absolute;
+    top: 0;
+    left: 360px;
+}
+
+.tree:nth-child(8) {
+    position: absolute;
+    top: 20px;
+    left: 420px;
+}
+
+.tree:nth-child(9) {
+    position: absolute;
+    top: 0;
+    left: 480px;
+}
+
+.tree:nth-child(10) {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.tree:nth-child(11) {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+}
+
+.tree:nth-child(12) {
+    position: absolute;
+    top: 10px;
+    left: 140px;
+}
+
+.tree:nth-child(13) {
+    position: absolute;
+    top: 10px;
+    left: 220px;
+}
+
+.tree:nth-child(14) {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+}
+
+.tree:nth-child(15) {
+    position: absolute;
+    top: 10px;
+    left: 320px;
+}
+
+.tree:nth-child(16) {
+    position: absolute;
+    top: 10px;
+    left: 390px;
+}
+
+.tree:nth-child(17) {
+    position: absolute;
+    top: 10px;
+    left: 450px;
+}
+
+.tree:nth-child(18) {
+    position: absolute;
+    top: 10px;
+    left: 500px;
+}
+
+.tree:nth-child(19) {
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    z-index: -10;
+}
+
+.tree:nth-child(20) {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+}
+
+.tree:nth-child(21) {
+    position: absolute;
+    top: 25px;
+    left: 45px;
+}
+
+.tree:nth-child(22) {
+    position: absolute;
+    top: 20px;
+    left: 110px;
+}
+
+.tree:nth-child(23) {
+    position: absolute;
+    top: 25px;
+    left: 155px;
+}
+
+.tree:nth-child(24) {
+    position: absolute;
+    top: 20px;
+    left: 215px;
+}
+
+.tree:nth-child(25) {
+    position: absolute;
+    top: 25px;
+    left: 265px;
+}
+
+.tree:nth-child(26) {
+    position: absolute;
+    top: 25px;
+    left: 335px;
+}
+
+.tree:nth-child(27) {
+    position: absolute;
+    top: 25px;
+    left: 405px;
+}
+
+.tree:nth-child(28) {
+    position: absolute;
+    top: 25px;
+    left: 475px;
+}
+
+.tree:nth-child(29) {
+    position: absolute;
+    top: 25px;
+    left: 515px;
+}
